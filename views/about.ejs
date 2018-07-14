@@ -2,83 +2,109 @@
 <html>
     <head>
 <% include partials/header%>
-
+        <title>The Kpop Konverters</title>
     </head>
     <body>
 <% include partials/navbar%>
 <div class="container" style="padding-top:70px;">
+    
+    
     <h1 style="font-size:40px; font-family: 'Anton', sans-serif;">Meet The Kpop Konverters</h1>
     
-    <div class="row">
-        <div class="col-xs-12">
+    <div class="row">                        
+        <div class="col-sm-12">
         <% if(currentUser){ %>
         <a class="ui blue basic button" href="/about/5b49699e717a6d1d44941d18/edit">Edit</a><br>
         <% } %>
-       
-            <p style="font-family: 'Arimo', sans-serif; padding:30px; text-align:left;"><%=bios[0].paragraphOne%></p>
-       
+            <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; padding:30px; text-align:left;"><%=bios[0].paragraphOne%></p>
+            <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; margin-top:-30px; text-align:left;"><%=bios[0].paragraphTwo%></p>
         </div>
     </div>
     
+    
     <div class="row about-row">
-        <div class="col-md-4">
+        <div class="col-sm-5 col-md-3">
             <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/996705_10153690379263371_167446000534133560_n.jpg?_nc_cat=0&_nc_eui2=AeEEYicKGLZlrAdwu22wJt6hcv60FAzoFiI_hJEjPcw4ZqYs61mvpp9FwQuqc1GuV3UUFF3W5s7wsCF7as8JrRZPxk0rDKR_vi9FVkNuZq5E0Q&oh=aa149970d287e4644ef4c84d42d1b428&oe=5BB9DBE1">
         </div>
-        <div class="col-md-1">
+        <div class="col-sm-1">
         <% if(currentUser){ %>
-        <a class="ui blue basic button" href="/about/5b496a2147871b1f300f6a68/edit">Edit</a><br>
+        <a style="margin-left:20px;" class="ui blue basic button" href="/about/5b496a2147871b1f300f6a68/edit">Edit</a><br>
         <% } %>
-          
         </div>
-        <div class="col-md-7">
-            
-            <span style="font-family: 'Arimo', sans-serif;"><%=bios[1].paragraphOne%></span>
-           
+        <div class="col-sm-6 col-md-7">
+            <% for(var i = 0; i<bios.length; i++){ %>
+            <% if(bios[i].name == "Suey"){ %>
+                <p class="tab" style="font-size:16px; text-align:left; font-family: 'Arimo', sans-serif;"><%=bios[i].paragraphOne%></p>
+                <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; margin-top:-10px; text-align:left;"><%=bios[i].paragraphTwo%></p>
+            <% } %>
+            <% } %>
         </div>
     </div>
+    
+    
+    
+    
     <div class="row about-row">
-        <div class="col-md-4">
-            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-1/22448419_10212163127247927_155247773814449258_n.jpg?_nc_cat=0&_nc_eui2=AeFIN-CWnQDRw2nlCFGlNGpCeu_aJSj9oRfAsAak06JedAukejLLOU1Jvd01m2u8faYurbgWx6E41M5SI7hglQrUx8i7vDNTg6GMaJmYUvzYMg&oh=13e8164f98b72c02aa224748008d5b64&oe=5BB1D360">
+        <div class="col-sm-5 col-md-3">
+            <img class="about-pic" src="https://lh3.googleusercontent.com/-3w8VHgl-Wp0/W0pcKI3TkbI/AAAAAAABAM8/zd--TxZtx0EeP3ZWN4dMOy0zhjXO6sKRQCL0BGAYYCw/h512/2018-07-14.png">
         </div>
-        <div class="col-md-1">
+        <div class="col-sm-1">
         <% if(currentUser){ %>
-        <a class="ui blue basic button" href="/about/5b496a452c6b142112518c68/edit">Edit</a><br>
+        <a  style="margin-left:20px;" class="ui blue basic button" href="/about/5b496a452c6b142112518c68/edit">Edit</a><br>
          <% } %>
         </div>
-        <div class="col-md-7">
-        
-            <span style="font-family: 'Arimo', sans-serif;"><%=bios[3].paragraphOne%></span>
-        
+        <div class="col-sm-6 col-md-7">
+            <% for(var i = 0; i<bios.length; i++){ %>
+            <% if(bios[i].name == "Megs"){ %>
+                <p class="tab" style="font-size:16px; text-align:left; font-family: 'Arimo', sans-serif;"><%=bios[i].paragraphOne%></p>
+                <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; margin-top:-10px; text-align:left;"><%=bios[i].paragraphTwo%></p>
+            <% } %>
+            <% } %>
         </div>
     </div>
+    
+    
+    
+    
     <div class="row about-row">
-        <div class="col-md-4">
+        <div class="col-sm-5 col-md-3">
             <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/27655530_1613788285370189_6415795282436273002_n.jpg?_nc_cat=0&_nc_eui2=AeEBmyrEeypkYc4BPFQdMTtUN0lE_6vh4_GDM0x3dQ1KNQ3B4LHxCuOvbpGCajVORJkdePe8DtMbBFRGoa_wpbtOQ7n7Phuq8oyTVdvjiB3kQA&oh=7b996ea8d70a9c3d3731ad89b76cb015&oe=5BB9DF80">
         </div>
-        <div class="col-md-1">
+        <div class="col-sm-1">
             <% if(currentUser){ %>
-        <a class="ui blue basic button" href="/about/5b496a64ccb26822f0557501/edit">Edit</a><br>
+        <a  style="margin-left:20px;" class="ui blue basic button" href="/about/5b496a64ccb26822f0557501/edit">Edit</a><br>
           <% } %>
         </div>
-        <div class="col-md-7">
-           
-            <span style="font-family: 'Arimo', sans-serif;"><%=bios[4].paragraphOne%></span>
-           
+        <div class="col-sm-6 col-md-7">
+            <% for(var i = 0; i<bios.length; i++){ %>
+            <% if(bios[i].name == "Toto"){ %>
+                <p class="tab" style="font-size:16px; text-align:left; font-family: 'Arimo', sans-serif;"><%=bios[i].paragraphOne%></p>
+                <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; margin-top:-10px; text-align:left;"><%=bios[i].paragraphTwo%></p>
+            <% } %>
+            <% } %>
         </div>
     </div>
+    
+    
+    
+    
+    
     <div class="row about-row">
-        <div class="col-md-4">
-            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/996705_10153690379263371_167446000534133560_n.jpg?_nc_cat=0&_nc_eui2=AeEEYicKGLZlrAdwu22wJt6hcv60FAzoFiI_hJEjPcw4ZqYs61mvpp9FwQuqc1GuV3UUFF3W5s7wsCF7as8JrRZPxk0rDKR_vi9FVkNuZq5E0Q&oh=aa149970d287e4644ef4c84d42d1b428&oe=5BB9DBE1">
+        <div class="col-sm-5 col-md-3">
+            <img class="about-pic" srcset="../../styles/ryn.jpg">
         </div>
-        <div class="col-md-1">
-           
-        <a class="ui blue basic button" href="/about/5b496ab211f8aa26add02316/edit">Edit</a><br>
-          
+        <div class="col-sm-1">
+            <% if(currentUser){ %>
+        <a  style="margin-left:20px;" class="ui blue basic button" href="/about/5b496ab211f8aa26add02316/edit">Edit</a><br>
+            <% } %>
         </div>
-        <div class="col-md-7">
-            
-            <span style="font-family: 'Arimo', sans-serif;"><%=bios[2].paragraphOne%></span>
-            
+        <div class="col-sm-6 col-md-7">
+            <% for(var i = 0; i<bios.length; i++){ %>
+            <% if(bios[i].name == "Ryn"){ %>
+                <p class="tab" style="font-size:16px; text-align:left; font-family: 'Arimo', sans-serif;"><%=bios[i].paragraphOne%></p>
+                <p class="tab" style="font-size:16px; font-family: 'Arimo', sans-serif; margin-top:-10px; text-align:left;"><%=bios[i].paragraphTwo%></p>
+            <% } %>
+            <% } %>
         </div>
     </div>
 </div>

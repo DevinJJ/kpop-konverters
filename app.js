@@ -6,6 +6,7 @@ var methodOverride = require("method-override");
 var BlogPost = require("./models/blogPost");
 var Bingo = require("./models/bingo");
 var Bio = require("./models/bio");
+var Subscriber = require("./models/subscriber");
 var Message = require("./models/message");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
@@ -149,9 +150,22 @@ app.put("/blog/:id", function(req, res){
     });
 });
 
+app.post("/subscriber", function(req, res){
+   Subscriber.create({email:req.body.email}, function(err, newlyCreated){
+       if(err)
+       {
+           console.log(err);
+       }
+       else
+       {
+           res.redirect("/");
+       }
+   });
+});
+
 //BINGO ROUTES ====================================================================================================
 app.get("/bingo", function(req, res){
-    res.render("bingoForm.ejs");
+    res.render("bingoInfo.ejs");
 });
 
 app.post("/bingo", function(req, res){
@@ -217,7 +231,16 @@ app.get("/dashboard", function(req, res){
                     }
                     else
                     {
-                        res.render("dashboard.ejs", {bingos:allBingos, messages:allMessages});
+                        Subscriber.find({}, function(err, allSubs){
+                           if(err)
+                           {
+                               console.log(err);
+                           }
+                           else
+                           {
+                               res.render("dashboard.ejs", {messages:allMessages, bingos:allBingos, subs:allSubs});
+                           }
+                        });
                     }
                 });
                

@@ -5,17 +5,15 @@
     </head>
     <body>
 <% include partials/navbar%>
-
+<p>At this point, if you have written in more than two paragraph boxes, only two paragraphs will be displayed.</p>
 <h1>Edit Bio for <%=bio.name%></h1>
 <form action="/about/<%=bio._id%>?_method=PUT" method="POST" style="text-align:center; padding-bottom:30px;">
     <textarea name="bio[paragraphOne]"><%=bio.paragraphOne%></textarea><br>
-    
-    
     <textarea name="bio[paragraphTwo]" class="new-paragraph" style="display:none;"  placeholder="TEXT"><%=bio.paragraphTwo%></textarea><br>
     <textarea name="bio[paragraphThree]" class="new-paragraph" style="display:none;"  placeholder="TEXT"><%=bio.paragraphThree%></textarea><br>
     <button class="btn btn-lg btn-primary">Submit</button>
 </form>
 <button style="margin-left:200px;" class="btn btn-md btn-warning" id="add-paragraph-btn">Add Paragraph</button>
 
-
+<script type="text/javascript" src="../../styles/newpost.js"></script>
 </body>

@@ -2,7 +2,7 @@
 <html>
     <head>
 <% include partials/header%>
-
+    <title>The Kpop Konverters</title>
     </head>
     <body>
 <% include partials/navbar%>
@@ -48,28 +48,25 @@
             </div>
             <hr>
             <hr>
-            
-            
-
             <% } %>
         </div>
         
         <div id="sideWidget" class="col-lg-4">
-            <img id="circle-logo" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/36034615_10216880358343772_1120515542566830080_n.jpg?_nc_cat=0&oh=25907f26ef9698516668b2d9107d20a9&oe=5BBAD7BB">
+            <!--<img id="circle-logo" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/36034615_10216880358343772_1120515542566830080_n.jpg?_nc_cat=0&oh=25907f26ef9698516668b2d9107d20a9&oe=5BBAD7BB">-->
              <p class="sideHeader" style="font-size:25px; text-decoration:underline; padding-top:20px;">Who Are the Kpop Konverters?<p>
             <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
               src="https://www.youtube.com/embed/VQmH7zOOqE4"
               frameborder="0"></iframe>
               <p style="font-family: 'Arimo', sans-serif;"><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
               <p>Join our Mailing list!</p>
-              <form style="text-align:center;">
-                  <input type="text" placeholder=" Email">
+              <form style="text-align:center;" action="/subscriber" method="POST">
+                  <input type="text" name="email" placeholder=" Email">
                   <button class="btn btn-md btn-primary" style="margin-top:7px;">Sign Up!</button>
               </form>
               <hr>
               
               
-             <p class="sideHeader" style="font-size:25px; text-decoration:underline; padding-top:20px;">Latest Video<p>
+             <p class="sideHeader" style="font-size:25px; text-decoration:underline; padding-top:20px;">Check out this Video!<p>
             <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
               src="https://www.youtube.com/embed?listType=search&list=the kpop konverters"
               frameborder="0"></iframe>
