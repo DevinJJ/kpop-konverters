@@ -13,7 +13,8 @@ var User = require("./models/user");
 
 app.use(express.static(__dirname + "/public"));
 
-mongoose.connect("mongodb://localhost/kpop_konverters");
+mongoose.connect("mongodb://devin:lego2500@ds137631.mlab.com:37631/thekpopkonverters");
+// mongoose.connect("mongodb://localhost/kpop_konverters");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 
@@ -283,23 +284,23 @@ app.put("/about/:id", function(req, res){
 });
 
 //Register Routes =============================================================================================================
-app.get("/register", function(req, res){                                         //Render Register page
-    res.render("register.ejs");
-});
+// app.get("/register", function(req, res){                                         //Render Register page
+//     res.render("register.ejs");
+// });
 
-app.post("/register", function(req, res){                                        //Register User
-    var newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, user){
-        if(err)
-        {
-            console.log(err);
-            res.redirect("back");
-        }
-        passport.authenticate("local")(req, res, function(){
-            res.redirect("/");
-        });
-    });
-});
+// app.post("/register", function(req, res){                                        //Register User
+//     var newUser = new User({username: req.body.username});
+//     User.register(newUser, req.body.password, function(err, user){
+//         if(err)
+//         {
+//             console.log(err);
+//             res.redirect("back");
+//         }
+//         passport.authenticate("local")(req, res, function(){
+//             res.redirect("/");
+//         });
+//     });
+// });
 
 app.get("/login", function(req, res){                                            //render login form
     res.render("login.ejs");
