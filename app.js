@@ -37,6 +37,18 @@ app.use(function(req, res, next){
 });
 
 
+// Bio.create({name:"Bio Header", paragraphOne:"Write your Bio here!"}, function(err, newlyCreated){
+//     if(err)
+//     {
+//         console.log(err);
+//     }
+//     else
+//     {
+//         console.log("Made Bio");
+//     }
+// });
+
+
 
 //END DECLARATIONS===================================================================================
 
@@ -284,23 +296,23 @@ app.put("/about/:id", function(req, res){
 });
 
 //Register Routes =============================================================================================================
-// app.get("/register", function(req, res){                                         //Render Register page
-//     res.render("register.ejs");
-// });
+app.get("/register", function(req, res){                                         //Render Register page
+    res.render("register.ejs");
+});
 
-// app.post("/register", function(req, res){                                        //Register User
-//     var newUser = new User({username: req.body.username});
-//     User.register(newUser, req.body.password, function(err, user){
-//         if(err)
-//         {
-//             console.log(err);
-//             res.redirect("back");
-//         }
-//         passport.authenticate("local")(req, res, function(){
-//             res.redirect("/");
-//         });
-//     });
-// });
+app.post("/register", function(req, res){                                        //Register User
+    var newUser = new User({username: req.body.username});
+    User.register(newUser, req.body.password, function(err, user){
+        if(err)
+        {
+            console.log(err);
+            res.redirect("back");
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/");
+        });
+    });
+});
 
 app.get("/login", function(req, res){                                            //render login form
     res.render("login.ejs");
