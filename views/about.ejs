@@ -14,7 +14,9 @@
         <% if(currentUser){ %>
         <a class="ui blue basic button" href="/about/5b318e62c74d8a18826ee18a/edit">Edit</a><br>
         <% } %>
+        <% if(bios[0]){ %>
             <p style="font-family: 'Arimo', sans-serif; padding:30px; text-align:left;"><%=bios[4].paragraphOne%></p>
+        <% } %>
         </div>
     </div>
     
@@ -29,7 +31,9 @@
           
         </div>
         <div class="col-md-7">
+            <% if(bios[0]){ %>
             <span style="font-family: 'Arimo', sans-serif;"><%=bios[0].paragraphOne%></span>
+            <% } %>
         </div>
     </div>
     <div class="row about-row">
@@ -42,7 +46,9 @@
          <% } %>
         </div>
         <div class="col-md-7">
+        <% if(bios[0]){ %>
             <span style="font-family: 'Arimo', sans-serif;"><%=bios[1].paragraphOne%></span>
+            <% } %>
         </div>
     </div>
     <div class="row about-row">
@@ -55,7 +61,9 @@
           <% } %>
         </div>
         <div class="col-md-7">
+            <% if(bios[0]){ %>
             <span style="font-family: 'Arimo', sans-serif;"><%=bios[2].paragraphOne%></span>
+            <% } %>
         </div>
     </div>
     <div class="row about-row">
@@ -68,7 +76,9 @@
           <% } %>
         </div>
         <div class="col-md-7">
+            <% if(bios[0]){ %>
             <span style="font-family: 'Arimo', sans-serif;"><%=bios[3].paragraphOne%></span>
+            <% } %>
         </div>
     </div>
 </div>
