@@ -240,22 +240,22 @@ app.get("/about", function(req, res){
      }); 
 });
 
-// app.post("/about", function(req, res){
-//     var name = req.body.name;
-//     var body = req.body.body;
+app.post("/about", function(req, res){
+    var name = req.body.name;
+    var body = req.body.body;
     
-//     var newBio = {name:name, paragraphOne:body};
-//      Bio.create(newBio, function(err, newlyCreated){
-//       if(err)
-//       {
-//           console.log(err);
-//       }
-//       else
-//       {
-//           res.redirect("/");
-//       }
-//   }); 
-// });
+    var newBio = {name:name, paragraphOne:body};
+     Bio.create(newBio, function(err, newlyCreated){
+      if(err)
+      {
+          console.log(err);
+      }
+      else
+      {
+          res.redirect("/");
+      }
+  }); 
+});
 
 app.get("/about/:id/edit", function(req, res){
         Bio.findById(req.params.id, function(err, foundBio){
