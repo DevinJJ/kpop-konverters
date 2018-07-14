@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+
+    </head>
+    <body>
+<% include partials/navbar%>
+
+
+
+<div class="container"  style="padding-top:60px;">
+    
+    
+    <div class="row">
+        <div class="col-lg-8">
+            <% for(var i = blogs.length -1; i >= 0; i--){ %>
+            <div>
+                <p id="title"><%=blogs[i].title%></p><br>
+
+                <% if(blogs[i].video){ %>
+                <iframe align="middle" id="video" width="580px" height="400px" src="https://www.youtube.com/embed/<%=blogs[i].video%>"></iframe>
+               <% } %>
+                <% if(blogs[i].picture){ %>
+                <img id="pic" src="<%=blogs[i].picture%>">
+                <p id="picCaption"><%=blogs[i].picCaption%></p>
+               <% } %>
+                    <p id="body" class="tab"><%=blogs[i].body%></p><br>
+                <% if(blogs[i].paragraphTwo){ %>
+                    <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphTwo%></p><br>
+                <% } %>
+                <% if(blogs[i].paragraphThree){ %>
+                    <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphThree%></p><br>
+                <% } %>
+                <% if(blogs[i].paragraphFour){ %>
+                    <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphFour%></p><br>
+                <% } %>
+                <% if(currentUser){ %>
+                <div style="padding-bottom:30px;">
+            <form style="padding-bottom:15px;" action="/blog/<%=blogs[i]._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-md btn-danger">DELETE</button>
+            </form>
+            <a style=" float:left; padding-bottom:10px;"  class="ui blue basic button" href="/blog/<%=blogs[i]._id%>/edit">Edit Post</a>
+            </div>
+            <% } %>
+            <div><p class="pull-left">Posted: <%=blogs[i].date%></p></div>
+            
+            </div>
+            <hr>
+            <hr>
+            
+            
+
+            <% } %>
+        </div>
+        
+        <div id="sideWidget" class="col-lg-4">
+            <img id="circle-logo" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/36034615_10216880358343772_1120515542566830080_n.jpg?_nc_cat=0&oh=25907f26ef9698516668b2d9107d20a9&oe=5BBAD7BB">
+             <p class="sideHeader" style="font-size:25px; text-decoration:underline; padding-top:20px;">Who Are the Kpop Konverters?<p>
+            <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
+              src="https://www.youtube.com/embed/VQmH7zOOqE4"
+              frameborder="0"></iframe>
+              <p style="font-family: 'Arimo', sans-serif;"><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
+              <p>Join our Mailing list!</p>
+              <form style="text-align:center;">
+                  <input type="text" placeholder=" Email">
+                  <button class="btn btn-md btn-primary" style="margin-top:7px;">Sign Up!</button>
+              </form>
+              <hr>
+              
+              
+             <p class="sideHeader" style="font-size:25px; text-decoration:underline; padding-top:20px;">Latest Video<p>
+            <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
+              src="https://www.youtube.com/embed?listType=search&list=the kpop konverters"
+              frameborder="0"></iframe>
+              <hr>
+            <p class="sideHeader" style="font-size:25px; padding-top:30px; text-decoration:underline;">Current Givaways!<p>
+                <a href="/bingo">
+            <div style="font-family: 'Arimo', sans-serif;" class="sidebarItem">
+                
+                  K-CON
+                <img style="width:200px; height:100px; padding-top:10px;" src="//images.duckduckgo.com/iu/?u=http%3A%2F%2Fasiasociety.org%2Ffiles%2Fbingo-graphic.jpg&f=1">
+            </div>
+            </a>
+            
+            
+<!--            <p class="sideHeader" style="font-size:25px; padding-top:30px; text-decoration:underline;">Our Mission:<p>-->
+<!--            <div style="font-size:15px; text-align:center;">-->
+                
+<!-- <p style="font-family: 'Arimo', sans-serif;">To Konvert people everywhere to the world of Kpop!<br>-->
+<!--Join us as we discover this addicting genre of music.  We'd love to connect with other music fans. Subscribe here to go on this journey together.</p>-->
+
+<!--<p style="font-family: 'Arimo', sans-serif;">Our channel features reactions, both by us and our nonkpopper (usually) friends and family. We also love doing compilations of our favorite groups and songs and moments. Other content includes: kdrama vlogs, dance covers, field trips, concerts and whatever else kpoppy related adventure we stumble upon! -->
+<!-- </p><p style="font-family: 'Arimo', sans-serif;">Give us feedback! Let us know what you like and what you want more of.</p>-->
+
+
+<!--            </div>-->
+          
+        </div>
+    </div>
+</div>
+
+<% include partials/footer%>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <% include partials/header%>
+            
+    </head>
+    <body>
+            <% include partials/navbar%>
+            
+            
+            
+<div class="container">
+    <div class="row" style="padding-top:70px;">
+        
+        <div class="col-xs-8" style="text-align:center;">
+             <p style="font-size:20px; font-family:raleway;">Send us a message!</p>
+            <form action="/contact" method="POST">
+                  <div class="form-group">
+                   <input required="true" type="text" placeholder="Name" name="name"><br>
+                   <input required="true" type="text" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                    <textarea required="true" name="body" placeholder="Message"></textarea>
+                </div>
+                <button class="ui basic button black">Send!</button>
+            </form>
+            </div>
+            
+            
+        </div>
+    
+</div>
+<% include partials/footer%>

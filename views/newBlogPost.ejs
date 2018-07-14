@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+    </head>
+    <body>
+<% include partials/navbar%>
+
+<div>
+    <div>
+        <div class="col-xs-3">
+            <div style="padding-top:130px; display:flex; flex-direction:column;">
+                <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-picture-btn">Add Picture</button>
+                <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-picture-caption-btn">Add Picture Caption</button>
+                <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-video-btn">Add Video</button>
+                <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-paragraph-btn">Add Paragraph</button>
+            </div>
+        </div>
+        <div class="col-xs-9">
+            <form style="text-align:center; padding-bottom:30px;" action="/" method="POST">
+                    <input  type="text" placeholder="Title" name="title"><br>
+                    <input id="picture" style="display:none;" type="text" placeholder="Picture URL" name="picture"><br>
+                    <input id="pictureCaption" style="display:none;" type="text" placeholder="Picture Caption" name="picCaption"><br>
+                    <input id="vid" style="display:none;" type="text" placeholder="Video URL" name="video"><br>
+                    <textarea name="body" placeholder="TEXT"></textarea><br>
+                    <textarea name="para2" class="new-paragraph" style="display:none;"  placeholder="TEXT"></textarea><br>
+                    <textarea name="para3" class="new-paragraph" style="display:none;"  placeholder="TEXT"></textarea><br>
+                    <textarea name="para4" class="new-paragraph" style="display:none;"  placeholder="TEXT"></textarea><br>
+                <button class="btn btn-lg btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="../../styles/newpost.js"></script>
+<% include partials/footer%>

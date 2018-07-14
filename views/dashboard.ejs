@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+
+    </head>
+    <body>
+<% include partials/navbar%>
+
+<% 
+    function convertSquaresToArray(string)
+    {
+        var arr = [];
+        for(var i = 0; i<string.length; i++)
+        {
+            var charAtI = string[i];
+            arr.push(charAtI);
+        }
+        return arr;
+    }
+    function checkSelection(bingo, num)
+    {
+        var bingoArr = convertSquaresToArray(bingos[bingo].selectedSquares);
+        var style = "";
+        
+        if(bingoArr[num] == "t")
+        {
+            style = "selected";
+        }
+        return style;
+
+    }
+
+
+%>
+
+<div class="container" style="padding-top:50px;">
+    <div class="row">
+        
+        <div class="col-xs-4">
+        
+        <% for(var i = 0; i<messages.length;i++){ %>
+            <%=messages[i].name%><br>
+            <%=messages[i].email%><br>
+            <%=messages[i].body%>
+            <hr>
+        <% } %>
+        </div>
+        <div class="col-xs-8">
+            <% for(var i = 0; i<bingos.length; i++){ %>
+            
+                Bingo Submission from: <%=bingos[i].name%><br>
+                Instagram:<%=bingos[i].instagram%>
+                <!--<h6>expand</h6>-->
+                <table>
+                    <tr>
+                        <td class="<%=checkSelection(i,0)%>"></td>
+                        <td class="<%=checkSelection(i,1)%>"></td>
+                        <td class="<%=checkSelection(i,2)%>"></td>
+                        <td class="<%=checkSelection(i,3)%>"></td>
+                        <td class="<%=checkSelection(i,4)%>"></td>
+                    </tr>
+                    <tr>
+                        <td class="<%=checkSelection(i,5)%>"></td>
+                        <td class="<%=checkSelection(i,6)%>"></td>
+                        <td class="<%=checkSelection(i,7)%>"></td>
+                        <td class="<%=checkSelection(i,8)%>"></td>
+                        <td class="<%=checkSelection(i,9)%>"></td>
+                    </tr>
+                    <tr>
+                        <td class="<%=checkSelection(i,10)%>"></td>
+                        <td class="<%=checkSelection(i,11)%>"></td>
+                        <td class="<%=checkSelection(i,12)%>"></td>
+                        <td class="<%=checkSelection(i,13)%>"></td>
+                        <td class="<%=checkSelection(i,14)%>"></td>
+                    </tr>
+                    <tr>
+                        <td class="<%=checkSelection(i,15)%>"></td>
+                        <td class="<%=checkSelection(i,16)%>"></td>
+                        <td class="<%=checkSelection(i,17)%>"></td>
+                        <td class="<%=checkSelection(i,18)%>"></td>
+                        <td class="<%=checkSelection(i,19)%>"></td>
+                    </tr>
+                    <tr>
+                        <td class="<%=checkSelection(i,20)%>"></td>
+                        <td class="<%=checkSelection(i,21)%>"></td>
+                        <td class="<%=checkSelection(i,22)%>"></td>
+                        <td class="<%=checkSelection(i,23)%>"></td>
+                        <td class="<%=checkSelection(i,24)%>"></td>
+                    </tr>
+                </table>
+                <form action="/bingo/<%=bingos[i]._id%>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+                
+                <hr>
+                
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../styles/dash.js"></script>
+
+</body>
+</html>

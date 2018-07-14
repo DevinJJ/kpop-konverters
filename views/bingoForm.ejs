@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <% include partials/header%>
+
+            <script type="text/javascript" >
+    
+                function submitForm()
+                {
+                    console.log("Called Submit Form " + selectedSquares)
+                    var strToSend = "";
+                    for (var i = 0; i<selectedSquares.length; i++)
+                    {
+                        console.log(i);
+                        if ((null == selectedSquares[i]) || (false == selectedSquares[i]))
+                        {
+                            strToSend += "f";
+                        }
+                        else
+                        {
+                            strToSend += "t";
+                        }
+                        // if ((i + 1) < selectedSquares.length)
+                        // {
+                        //     strToSend += ",";
+                        // }
+                        console.log(strToSend);
+                    }
+                    console.log("User answers: " + strToSend);
+                    var hiddenControl = document.getElementById("selectedSquares");
+                    hiddenControl.value = strToSend;
+                    document.forms.sendBingo.submit();
+                    return false;
+                }
+                
+            </script>
+    </head>
+    <body>
+            <% include partials/navbar%>
+            
+
+
+<div class="container">
+    <div class="row" style=" padding-top:70px;">
+        <div class="col-md-4">
+            <form id="sendBingo" style="text-align:center;" method="POST" action="/bingo">
+                <h1>Bingo Form</h1>
+                <input type="text" required="true" name="name" placeholder="Name"><br>
+                <input type="text" required="true" name="instagram" placeholder="Instagram Handle"><br>
+                <input type="hidden" name="selectedSquares" id="selectedSquares">
+                <button style="margin-top:20px; width:100px; height:30px;" onClick="javascript:submitForm()">Submit</button>
+
+            </form>
+        </div>
+        <div class="col-md-8">
+            <table>
+    <tr>
+        <td><span class="bingoItem">Take a picture with The Kpop Konverters</span></td>
+        <td><span class="bingoItem">Take a picture with The Kpop Konverters</span></td>
+        <td><span class="bingoItem">Let The Kpop Konverters film your kpop konversion story (to be put on our channel)</span></td>
+        <td><span class="bingoItem">Show us your best picture from one of the concerts</span></td>
+        <td><span class="bingoItem">Item</span></td>
+    </tr>
+        <tr>
+        <td><span class="bingoItem">Do a kpop dance in public at the convention</span></td>
+        <td><span class="bingoItem">Take Pic with YADAYADA</span></td>
+        <td><span class="bingoItem">Take a picture of your favorite artist in attendance on the jumbotron</span></td>
+        <td><span class="bingoItem">Go to one panel with The Kpop Konverters</span></td>
+        <td><span class="bingoItem">Item</span></td>
+    </tr>
+        <tr>
+        <td><span class="bingoItem">Item</span></td>
+        <td><span class="bingoItem">Take a picture of any special guest at the convention (idol, YouTuber, etc)</span></td>
+        <td><span class="bingoItem">Subscribe to and follow the Kpop Konverters in Youtube, Instagram, Twitter and Facebook!</span></td>
+        <td><span class="bingoItem">Bring a drink/food to someone waiting in the GA line</span></td>
+        <td><span class="bingoItem">Take a selfie with a new friend made at this year’s kcon</span></td>
+    </tr>
+        <tr>
+        <td><span class="bingoItem">Take a selfie with the group you went to kcon with</span></td>
+        <td><span class="bingoItem">Take a picture with any merch bought at this year’s kcon</span></td>
+        <td><span class="bingoItem">Take Pic with YADAYADA</span></td>
+        <td><span class="bingoItem">Take Pic with YADAYADA</span></td>
+        <td><span class="bingoItem">Try a new food on K-Food Street</span></td>
+    </tr>
+        <tr>
+        <td><span class="bingoItem">Item</span></td>
+        <td><span class="bingoItem">Go to all three panels with The Kpop Konverters</span></td>
+        <td><span class="bingoItem">Participate in the Random Dance Challenge</span></td>
+        <td><span class="bingoItem">Item</span></td>
+        <td><span class="bingoItem">Tell 3 people about The Kpop Konverter’s Kcon Bingo</span></td>
+    </tr>
+</table>
+        </div>
+    </div>
+</div>
+
+            
+<script type="text/javascript" src="../../styles/toggle.js">
+</script>
+
+<% include partials/footer%>

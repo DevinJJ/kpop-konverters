@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+    </head>
+    <body>
+<% include partials/navbar%>
+<h1><%=blog.title%></h1>
+
+<form action="/blog/<%=blog._id%>?_method=PUT" method="POST" style="text-align:center; padding-bottom:30px;">
+    <input type="text" name="blog[title]" value="<%=blog.title%>"><br>
+    <input type="text" placeholder="Picture URL"  name="blog[picture]" value="<%=blog.picture%>"><br>
+    <input type="text" placeholder="Video URL"  name="blog[video]" value="<%=blog.video%>"><br>
+    <textarea value="<%=blog.body%>" name="blog[body]"><%=blog.body%></textarea><br>
+    <textarea name="blog[paragraphTwo]" class="new-paragraph" style="display:none;"  placeholder="TEXT"><%=blog.paragraphTwo%></textarea><br>
+    <textarea name="blog[paragraphThree]" class="new-paragraph" style="display:none;"  placeholder="TEXT"><%=blog.paragraphThree%></textarea><br>
+    <textarea name="blog[paragraphFour]" class="new-paragraph" style="display:none;"  placeholder="TEXT"><%=blog.paragraphFour%></textarea><br>
+    <button class="btn btn-lg btn-primary">Submit</button>
+</form>
+<button style="margin-left:200px;" class="btn btn-md btn-warning" id="add-paragraph-btn">Add Paragraph</button>
+
+
+<script type="text/javascript" src="../../styles/newpost.js"></script>
+</body>

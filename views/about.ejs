@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+
+    </head>
+    <body>
+<% include partials/navbar%>
+<div class="container" style="padding-top:70px;">
+    <h1 style="font-size:40px; font-family: 'Anton', sans-serif;">Meet The Kpop Konverters</h1>
+    
+    <div class="row">
+        <div class="col-xs-12">
+        <% if(currentUser){ %>
+        <a class="ui blue basic button" href="/about/5b318e62c74d8a18826ee18a/edit">Edit</a><br>
+        <% } %>
+            <p style="font-family: 'Arimo', sans-serif; padding:30px; text-align:left;"><%=bios[4].paragraphOne%></p>
+        </div>
+    </div>
+    
+    <div class="row about-row">
+        <div class="col-md-4">
+            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/996705_10153690379263371_167446000534133560_n.jpg?_nc_cat=0&_nc_eui2=AeEEYicKGLZlrAdwu22wJt6hcv60FAzoFiI_hJEjPcw4ZqYs61mvpp9FwQuqc1GuV3UUFF3W5s7wsCF7as8JrRZPxk0rDKR_vi9FVkNuZq5E0Q&oh=aa149970d287e4644ef4c84d42d1b428&oe=5BB9DBE1">
+        </div>
+        <div class="col-md-1">
+        <% if(currentUser){ %>
+        <a class="ui blue basic button" href="/about/5b30827fcf982bc094663f3e/edit">Edit</a><br>
+        <% } %>
+          
+        </div>
+        <div class="col-md-7">
+            <span style="font-family: 'Arimo', sans-serif;"><%=bios[0].paragraphOne%></span>
+        </div>
+    </div>
+    <div class="row about-row">
+        <div class="col-md-4">
+            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-1/22448419_10212163127247927_155247773814449258_n.jpg?_nc_cat=0&_nc_eui2=AeFIN-CWnQDRw2nlCFGlNGpCeu_aJSj9oRfAsAak06JedAukejLLOU1Jvd01m2u8faYurbgWx6E41M5SI7hglQrUx8i7vDNTg6GMaJmYUvzYMg&oh=13e8164f98b72c02aa224748008d5b64&oe=5BB1D360">
+        </div>
+        <div class="col-md-1">
+        <% if(currentUser){ %>
+        <a class="ui blue basic button" href="/about/5b3082a3cf982bc094663f3f/edit">Edit</a><br>
+         <% } %>
+        </div>
+        <div class="col-md-7">
+            <span style="font-family: 'Arimo', sans-serif;"><%=bios[1].paragraphOne%></span>
+        </div>
+    </div>
+    <div class="row about-row">
+        <div class="col-md-4">
+            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/27655530_1613788285370189_6415795282436273002_n.jpg?_nc_cat=0&_nc_eui2=AeEBmyrEeypkYc4BPFQdMTtUN0lE_6vh4_GDM0x3dQ1KNQ3B4LHxCuOvbpGCajVORJkdePe8DtMbBFRGoa_wpbtOQ7n7Phuq8oyTVdvjiB3kQA&oh=7b996ea8d70a9c3d3731ad89b76cb015&oe=5BB9DF80">
+        </div>
+        <div class="col-md-1">
+            <% if(currentUser){ %>
+        <a class="ui blue basic button" href="/about/5b3082accf982bc094663f40/edit">Edit</a><br>
+          <% } %>
+        </div>
+        <div class="col-md-7">
+            <span style="font-family: 'Arimo', sans-serif;"><%=bios[2].paragraphOne%></span>
+        </div>
+    </div>
+    <div class="row about-row">
+        <div class="col-md-4">
+            <img class="about-pic" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/996705_10153690379263371_167446000534133560_n.jpg?_nc_cat=0&_nc_eui2=AeEEYicKGLZlrAdwu22wJt6hcv60FAzoFiI_hJEjPcw4ZqYs61mvpp9FwQuqc1GuV3UUFF3W5s7wsCF7as8JrRZPxk0rDKR_vi9FVkNuZq5E0Q&oh=aa149970d287e4644ef4c84d42d1b428&oe=5BB9DBE1">
+        </div>
+        <div class="col-md-1">
+            <% if(currentUser){ %>
+        <a class="ui blue basic button" href="/about/5b3082b6cf982bc094663f41/edit">Edit</a><br>
+          <% } %>
+        </div>
+        <div class="col-md-7">
+            <span style="font-family: 'Arimo', sans-serif;"><%=bios[3].paragraphOne%></span>
+        </div>
+    </div>
+</div>
+<% include partials/footer%>
