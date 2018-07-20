@@ -165,7 +165,7 @@ app.post("/subscriber", function(req, res){
 
 //BINGO ROUTES ====================================================================================================
 app.get("/bingo", function(req, res){
-    res.render("bingoInfo.ejs");
+    res.render("bingoForm.ejs");
 });
 
 app.post("/bingo", function(req, res){

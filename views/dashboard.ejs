@@ -7,6 +7,120 @@
 <% include partials/navbar%>
 
 <% 
+    function checkRow(bingoSelection, startIndex)
+    {
+        rowCount = 0;
+        for(var i = startIndex; i<startIndex + 5; i++)
+        {
+            if(bingoSelection[i] == "t")
+            {
+                rowCount++;
+            }
+        }
+        if(rowCount == 5){
+            return 1;
+            
+        }
+        else{
+            return 0;
+        }
+    }
+    function checkColumn(bingoSelection, startIndex)
+    {
+        colCount = 0;
+        for(var i = startIndex; i<= 24; i+=5)
+        {
+            if(bingoSelection[i] == "t")
+            {
+                colCount++;
+            }
+        }
+        if(colCount == 5){
+            return 1;
+            
+        }
+        else{
+            return 0;
+        }
+    }
+    function checkDiagonal(bingoSelection, startIndex)
+    {
+        if(startIndex == 0)
+        {
+            diagCount = 0;
+            for(var i = startIndex; i<5; i++ )
+            {
+                if(bingoSelection[i*6] == "t")
+                {
+                    diagCount++;
+                }
+            }
+            
+            if(diagCount == 5){
+                return 1;
+                
+            }
+            else{
+                return 0;
+            }
+        }
+        else
+        {
+            diagCount = 0;
+            for(var i = 0; i<5; i++ )
+            {
+                if(bingoSelection[startIndex + (i * 5)] == "t")
+                {
+                    diagCount++;
+                }
+                startIndex = startIndex - 1;
+            }
+            
+            if(diagCount == 5)
+            {
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        
+    }
+
+    function addRows(bingoSelection)
+    {
+        
+        var rowOne = checkRow(bingoSelection, 0);
+        var rowTwo = checkRow(bingoSelection, 5);
+        var rowThree = checkRow(bingoSelection, 10);
+        var rowFour = checkRow(bingoSelection, 15);
+        var rowFive = checkRow(bingoSelection, 20);
+        return rowOne + rowTwo + rowThree + rowFour + rowFive;
+    }
+    function addColumns(bingoSelection)
+    {
+        var colOne = checkColumn(bingoSelection, 0);
+        var colTwo = checkColumn(bingoSelection, 1);
+        var colThree = checkColumn(bingoSelection, 2);
+        var colFour = checkColumn(bingoSelection, 3);
+        var colFive = checkColumn(bingoSelection, 4);
+        
+        return colOne+colTwo+colThree+colFour + colFive;
+    }
+    function addDiagonals(bingoSelection)
+    {
+        diagOne = checkDiagonal(bingoSelection, 0);
+        diagTwo = checkDiagonal(bingoSelection, 4);
+        return diagOne + diagTwo;
+    }
+    
+    function totalEntries(bingoSelection)
+    {
+        var total = addRows(bingoSelection) + addColumns(bingoSelection) + addDiagonals(bingoSelection);
+        return(total);
+    }
+    
     function convertSquaresToArray(string)
     {
         var arr = [];
@@ -27,7 +141,6 @@
             style = "selected";
         }
         return style;
-
     }
 
 
@@ -56,7 +169,11 @@
             <% for(var i = 0; i<bingos.length; i++){ %>
             
                 Bingo Submission from: <%=bingos[i].name%><br>
-                Instagram:<%=bingos[i].instagram%>
+                Instagram:<%=bingos[i].instagram%><br>
+                Number of Rows: <%=addRows(bingos[i].selectedSquares)%><br>
+                Number of Columns: <%=addColumns(bingos[i].selectedSquares)%><br>
+                Number of Diagonals: <%=addDiagonals(bingos[i].selectedSquares)%><br>
+                Total entries for <%=bingos[i].name%>: <%=totalEntries(bingos[i].selectedSquares)%><br>
                 <!--<h6>expand</h6>-->
                 <table>
                     <tr>
@@ -95,6 +212,7 @@
                         <td class="<%=checkSelection(i,24)%>"></td>
                     </tr>
                 </table>
+                
                 <form action="/bingo/<%=bingos[i]._id%>?_method=DELETE" method="POST">
                     <button>Delete</button>
                 </form>
