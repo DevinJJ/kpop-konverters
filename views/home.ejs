@@ -37,6 +37,7 @@
                     <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphFour%></p><br>
                 <% } %>
                 <% if(currentUser){ %>
+                
                 <div style="padding-bottom:30px;">
             <form style="padding-bottom:15px;" action="/blog/<%=blogs[i]._id%>?_method=DELETE" method="POST">
                 <button class="btn btn-md btn-danger">DELETE</button>
@@ -53,35 +54,44 @@
         </div>
         
         <div id="sideWidget" class="col-lg-4">
-            <!--<img id="circle-logo" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/36034615_10216880358343772_1120515542566830080_n.jpg?_nc_cat=0&oh=25907f26ef9698516668b2d9107d20a9&oe=5BBAD7BB">-->
+            
              <p class="sideHeader" style="font-size:25px; padding-top:20px;">Who Are The Kpop Konverters?<p>
+                 
             <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
               src="https://www.youtube.com/embed/VQmH7zOOqE4"
               frameborder="0"></iframe>
-              <p style="font-family: 'Arimo', sans-serif;"><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
-              <p>Join our Mailing list to hear about new giveaways!</p>
-              <p>No Spam</p>
+              
+              
+              <p><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
+              <p>Join our Mailing list to hear about new giveaways and upcoming events!</p>
+              <p>We never send spam</p>
               <form style="text-align:center;" action="/subscriber" method="POST">
                   <input type="text" name="email" placeholder=" Email">
                   
                   <button class="btn btn-md btn-primary" style="margin-top:7px;">Sign Up!</button>
               </form>
+             
+
               <hr>
               
               
              <p class="sideHeader" style="font-size:25px; padding-top:20px;">Check Out This Video!<p>
-            <iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"
+            <iframe class="ytplayer" preload="none" type="text/html" width="360" height="220" style="padding-top:20px;"
               src="https://www.youtube.com/embed?listType=search&list=kpop konverters"
               frameborder="0"></iframe>
               <hr>
             <p class="sideHeader" style="font-size:25px; padding-top:30px;">Current Giveaways!<p>
                 <a href="/bingo">
-            <div style="font-family: 'Arimo', sans-serif; width:100%" class="sidebarItem">
-                <img class="giveaway-img" src="../../styles/bingo.jpg">
+            <div style="width:100%" class="sidebarItem">
+                <img class="giveaway-img" src="../../styles/pics/bingo.jpg">
             </div>
             </a>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <% include partials/footer%>
+        </div>
+    </div>
 </div>
-
-<% include partials/footer%>

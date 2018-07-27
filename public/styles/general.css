@@ -1,0 +1,64 @@
+
+body
+{
+   background-color: #e8ebed;
+}
+h1
+{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+}
+i
+{
+    padding-left: 20px;
+}
+hr
+{
+    border-color: black;
+}
+
+input
+{
+    margin-top: 20px;
+    height: 30px;
+    width:300px;
+}
+textarea
+{
+    margin-top: 20px;
+    width:650px;
+    height:200px;
+}
+table
+{
+    margin:0 auto;
+    width:700px;
+    height:700px;
+  
+}
+td
+{
+    border:4px solid black;
+    background-color: #f4d0e9;
+}
+a
+{
+ color:black;   
+}
+input
+{
+    border:none;
+}
+p
+{
+ text-align: center;
+ font-family: 'Arimo', sans-serif;
+}
+.wrapper
+{
+    padding:40px 20px 20px 40px;
+}
+.left
+{
+    text-align: left;
+}
