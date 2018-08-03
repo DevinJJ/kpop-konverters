@@ -10,13 +10,13 @@
 
 
 
-<div class="container"  style="padding-top:60px;">
+<div class="page_section" style="padding-top:60px;">
     
-    
-    <div class="row">
-        <div class="col-lg-8">
+    <!--<div class="row">-->
+        <!--<div class="col-lg-8">-->
+        <div class="blog_body blog_wrapper">
             <% for(var i = blogs.length -1; i >= 0; i--){ %>
-            <div>
+            
                 <p id="title"><%=blogs[i].title%></p><br>
 
                 <% if(blogs[i].video){ %>
@@ -26,6 +26,7 @@
                 <img id="pic" src="<%=blogs[i].picture%>">
                 <p id="picCaption"><%=blogs[i].picCaption%></p>
                <% } %>
+               <div class="blog_body_text">
                     <p id="body" class="tab"><%=blogs[i].body%></p><br>
                 <% if(blogs[i].paragraphTwo){ %>
                     <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphTwo%></p><br>
@@ -36,6 +37,7 @@
                 <% if(blogs[i].paragraphFour){ %>
                     <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphFour%></p><br>
                 <% } %>
+                </div>
                 <% if(currentUser){ %>
                 
                 <div style="padding-bottom:30px;">
@@ -46,14 +48,18 @@
             </div>
             <% } %>
             <div><p class="pull-left">Posted: <%=blogs[i].date%></p></div>
+            <hr>
+            <hr>
             
-            </div>
-            <hr>
-            <hr>
             <% } %>
-        </div>
+            </div>
+
+            
+        <!--</div>-->
+        <div style="padding-right:10px;">
+            
         
-        <div id="sideWidget" class="col-lg-4">
+        <div class="sidebar">
             
              <p class="sideHeader" style="font-size:25px; padding-top:20px;">Who Are The Kpop Konverters?<p>
                  
@@ -87,11 +93,8 @@
             </div>
             </a>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-xs-12">
-            <% include partials/footer%>
+        
         </div>
-    </div>
+    <!--</div>-->
+    
 </div>

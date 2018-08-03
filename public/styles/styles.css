@@ -1,5 +1,7 @@
 @import "post.css";
 @import "general.css";
+@import "header.css";
+@import "home.css";
 
 .nav
 {
@@ -19,13 +21,7 @@
     font-weight: bolder;
 
 }
-#sideWidget
-{
-    background-color: #d8d7d6;
-    border:1px solid black;
-    border-radius: 7px;
-    height:1250px;
-}
+
 #circle-logo
 {
     width:100px;
@@ -52,24 +48,7 @@
     margin-bottom: 20px;
     font-size: 25px;
 }
-.giveaway-img
-{
-    width:550px;
-    height: 250px;
-    padding-top:10px;
-    display:block;
-    margin:auto;
-}
 
-
-@media(min-width: 1200px){
-
-.giveaway-img
-{
-    width:270px;
-    height:130px;
-}
-  }
 .navbarLink
 {
     font-size: 20px;
