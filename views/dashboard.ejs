@@ -168,13 +168,13 @@
         <div class="col-xs-8">
             <% for(var i = 0; i<bingos.length; i++){ %>
             
-                Bingo Submission from: <%=bingos[i].name%><br>
+                <p>Bingo Submission from: <%=bingos[i].name%><br>
                 Instagram:<%=bingos[i].instagram%><br>
                 Number of Rows: <%=addRows(bingos[i].selectedSquares)%><br>
                 Number of Columns: <%=addColumns(bingos[i].selectedSquares)%><br>
                 Number of Diagonals: <%=addDiagonals(bingos[i].selectedSquares)%><br>
-                Total entries for <%=bingos[i].name%>: <%=totalEntries(bingos[i].selectedSquares)%><br>
-                <!--<h6>expand</h6>-->
+                Total entries for <%=bingos[i].name%>: <%=totalEntries(bingos[i].selectedSquares)%><br></p>
+               
                 <table>
                     <tr>
                         <td class="<%=checkSelection(i,0)%>"></td>

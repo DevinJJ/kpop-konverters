@@ -28,7 +28,7 @@ router.post("/bingo", function(req, res){
        }
        else
        {
-           res.redirect("/");
+           res.render("submitted.ejs", {selectedSquares:selectedSquares});
        }
    }); 
 });
@@ -45,7 +45,6 @@ router.delete("/bingo/:id", function(req, res){                                 
         }
     });
 });
-
 
 
 module.exports = router;

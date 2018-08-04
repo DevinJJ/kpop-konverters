@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include partials/header%>
+    </head>
+    <body>
+<% include partials/navbar%>
+
+<%
+    function checkRow(bingoSelection, startIndex)
+    {
+        rowCount = 0;
+        for(var i = startIndex; i<startIndex + 5; i++)
+        {
+            if(bingoSelection[i] == "t")
+            {
+                rowCount++;
+            }
+        }
+        if(rowCount == 5){
+            return 1;
+            
+        }
+        else{
+            return 0;
+        }
+    }
+    function checkColumn(bingoSelection, startIndex)
+    {
+        colCount = 0;
+        for(var i = startIndex; i<= 24; i+=5)
+        {
+            if(bingoSelection[i] == "t")
+            {
+                colCount++;
+            }
+        }
+        if(colCount == 5){
+            return 1;
+            
+        }
+        else{
+            return 0;
+        }
+    }
+    function checkDiagonal(bingoSelection, startIndex)
+    {
+        if(startIndex == 0)
+        {
+            diagCount = 0;
+            for(var i = startIndex; i<5; i++ )
+            {
+                if(bingoSelection[i*6] == "t")
+                {
+                    diagCount++;
+                }
+            }
+            
+            if(diagCount == 5){
+                return 1;
+                
+            }
+            else{
+                return 0;
+            }
+        }
+        else
+        {
+            diagCount = 0;
+            for(var i = 0; i<5; i++ )
+            {
+                if(bingoSelection[startIndex + (i * 5)] == "t")
+                {
+                    diagCount++;
+                }
+                startIndex = startIndex - 1;
+            }
+            
+            if(diagCount == 5)
+            {
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        
+    }
+
+    function addRows(bingoSelection)
+    {
+        
+        var rowOne = checkRow(bingoSelection, 0);
+        var rowTwo = checkRow(bingoSelection, 5);
+        var rowThree = checkRow(bingoSelection, 10);
+        var rowFour = checkRow(bingoSelection, 15);
+        var rowFive = checkRow(bingoSelection, 20);
+        return rowOne + rowTwo + rowThree + rowFour + rowFive;
+    }
+    function addColumns(bingoSelection)
+    {
+        var colOne = checkColumn(bingoSelection, 0);
+        var colTwo = checkColumn(bingoSelection, 1);
+        var colThree = checkColumn(bingoSelection, 2);
+        var colFour = checkColumn(bingoSelection, 3);
+        var colFive = checkColumn(bingoSelection, 4);
+        
+        return colOne+colTwo+colThree+colFour + colFive;
+    }
+    function addDiagonals(bingoSelection)
+    {
+        diagOne = checkDiagonal(bingoSelection, 0);
+        diagTwo = checkDiagonal(bingoSelection, 4);
+        return diagOne + diagTwo;
+    }
+    
+    function totalEntries(bingoSelection)
+    {
+        var total = addRows(bingoSelection) + addColumns(bingoSelection) + addDiagonals(bingoSelection);
+        return(total);
+    }
+%>
+
+
+
+<h1>Thank you for submitting your bingo board!</h1>
+<h4 style="text-align:center;">You have <%=totalEntries(selectedSquares)%> entries</h4>
+<h1><%=addRows(selectedSquares)%> Row(s)</h1>
+<h1><%=addColumns(selectedSquares)%> Column(s)</h1>
+<h1><%=addDiagonals(selectedSquares)%> Diagonal(s)</h1>

@@ -9,7 +9,7 @@
 {
     width: 100%;
 }
-@media(min-width: 1075px)
+@media(min-width: 1200px)
 {
     .blog_body{
         
@@ -27,7 +27,7 @@
     margin: 0 auto;
 }
 
-@media(min-width: 1075px)
+@media(min-width: 1200px)
 {
     .sidebar{
         
@@ -70,15 +70,26 @@
 
 .giveaway-img
 {
-    width:370px;
-    height:200px;
+    width:400px;
+    height:170px;
 }
   }
   
-
-  
-.blog_body_text
+.bingo_banner
 {
-    
-   
+    width:90%;
+    display:block;
+    margin:0 auto;
+    border:1px solid black;
 }
+
+@media(min-width: 1000px){
+
+.bingo_banner
+{
+    width:65%;
+    display:block;
+    margin:0 auto;
+    border:1px solid black;
+}
+  }
