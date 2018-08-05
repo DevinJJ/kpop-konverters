@@ -88,6 +88,9 @@ app.get("/dashboard", function(req, res){
      });
 });
 
+// app.get("/google97c75e699bf5d716.html", function(req, res){
+//     res.render("googleVerify.html");
+// });
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
