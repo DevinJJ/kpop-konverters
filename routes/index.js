@@ -9,6 +9,7 @@ var Subscriber = require("../models/subscriber");
 
 
 
+
 router.delete("/blog/:id", function(req, res){                                      //DELETE
     BlogPost.findByIdAndRemove(req.params.id, function(err){
         if(err)
@@ -29,6 +30,7 @@ router.get("/newpost", function(req, res){                                      
 router.post("/", function(req, res){                                                 //MAKE NEWPOST
 
     var title = req.body.title;
+    var picFile = req.body.file;
     var body = req.body.body;
     var para2 = req.body.para2;
     var para3 = req.body.para3;
@@ -42,7 +44,7 @@ router.post("/", function(req, res){                                            
     var mm = today.getMonth() + 1;
     var hh = today.getHours();
     var yy = today.getFullYear();
-    
+    console.log(picFile);
     if(hh < 6)
     {
         dd = dd -1;
@@ -50,7 +52,7 @@ router.post("/", function(req, res){                                            
     var date = mm + "/" + dd + "/" + yy;
     
     
-    var newPost = {title:title, body:body, picture:picture, date:date, video:video, picCaption:picCaption, paragraphTwo:para2, paragraphThree:para3, paragraphFour:para4};
+    var newPost = {title:title, body:body, picture:picture, picFile:picFile, date:date, video:video, picCaption:picCaption, paragraphTwo:para2, paragraphThree:para3, paragraphFour:para4};
    BlogPost.create(newPost, function(err, newlyCreated){
        if(err)
        {
@@ -102,6 +104,10 @@ router.put("/blog/:id", function(req, res){
             res.redirect("/");
         }
     });
+});
+
+router.post("/upload", function(req, res){
+    
 });
 
 router.post("/subscriber", function(req, res){

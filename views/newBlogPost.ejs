@@ -13,12 +13,13 @@
                 <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-picture-btn">Add Picture</button>
                 <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-picture-caption-btn">Add Picture Caption</button>
                 <button style="margin-left:100px; margin-top:15px;" class="btn btn-sm btn-warning" id="add-video-btn">Add Video</button>
-                
+        
             </div>
         </div>
         <div class="col-xs-9">
-            <form style="text-align:center; padding-bottom:30px;" action="/" method="POST">
+            <form style="text-align:center; padding-bottom:30px;" action="/" enctype="multipart/form-data" method="POST">
                     <input  type="text" placeholder="Title" name="title"><br>
+                    <input type="file" name="file">
                     <input id="picture" style="display:none;" type="text" placeholder="Picture URL" name="picture"><br>
                     <input id="pictureCaption" style="display:none;" type="text" placeholder="Picture Caption" name="picCaption"><br>
                     <input id="vid" style="display:none;" type="text" placeholder="Video URL" name="video"><br>
