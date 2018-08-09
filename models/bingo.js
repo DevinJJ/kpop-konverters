@@ -1,8 +1,10 @@
 var mongoose = require("mongoose");
  
 var bingoSchema = new mongoose.Schema({
-    name:String,
+    firstname:String,
+    lastname:String,
     instagram:String,
+    twitter:String,
     selectedSquares: String
  
  

@@ -16,11 +16,13 @@ router.get("/bingo", function(req, res){
 });
 
 router.post("/bingo", function(req, res){
-    var name = req.body.name;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
     var instagram = req.body.instagram;
+    var twitter = req.body.twitter;
     var selectedSquares = req.body.selectedSquares;
     
-        var newBingo = {name:name, instagram:instagram, selectedSquares:selectedSquares};
+        var newBingo = {firstname:firstname, lastname:lastname, instagram:instagram, twitter:twitter, selectedSquares:selectedSquares};
        Bingo.create(newBingo, function(err, newlyCreated){
        if(err)
        {
