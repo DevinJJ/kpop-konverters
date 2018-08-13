@@ -58,15 +58,15 @@
         <div class="col-md-4 col-sm-12">
             <form id="sendBingo" style="text-align:center;" method="POST" action="/bingo">
                 <h1>Bingo Entry Form</h1>
-                <input type="text" style="width:130px;" required="true" name="firstname" placeholder="First Name">
-                <input type="text" style="width:130px;" required="true" name="lastname" placeholder="Last Name"><br>
-                Instagram: <input type="text" required="true" style="width:180px;" name="instagram" ><br>
-                Twitter: <input type="text" required="true" style="width:180px;" name="twitter"><br>
+                <input type="text" style="width:130px;" name="firstname" placeholder="First Name">
+                <input type="text" style="width:130px;" name="lastname" placeholder="Last Name"><br>
+                Instagram: <input type="text" style="width:180px;" name="instagram" ><br>
+                Twitter: <input type="text"  style="width:180px;" name="twitter"><br>
                 <input type="hidden" name="selectedSquares" id="selectedSquares">
                 
                 <p style="padding-top:10px;">Select your completed bingo squares on the bingo board</p>
-                <p>This giveaway will open on Aug 12, 2018 at 11:59 PM, MST</p>
-                <!--<button style="margin-top:20px; width:100px; height:30px;" onClick="javascript:submitForm()">Submit</button>-->
+                <!--<p>This giveaway will open on Aug 12, 2018 at 11:59 PM, MST</p>-->
+                <button style="margin-top:20px; width:100px; height:30px;" onClick="javascript:submitForm()">Submit</button>
 
             </form>
         </div>
