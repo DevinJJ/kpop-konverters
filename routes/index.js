@@ -106,9 +106,9 @@ router.put("/blog/:id", function(req, res){
     });
 });
 
-router.post("/upload", function(req, res){
+// router.post("/upload", function(req, res){
     
-});
+// });
 
 router.post("/subscriber", function(req, res){
    Subscriber.create({email:req.body.email}, function(err, newlyCreated){

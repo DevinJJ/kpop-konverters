@@ -3,11 +3,9 @@
     <head>
 <% include partials/header%>
     <title>The Kpop Konverters</title>
-    
     </head>
     <body>
 <% include partials/navbar%>
-
 
 
 <div class="page_section" style="padding-top:60px;">
@@ -15,18 +13,20 @@
     <!--<div class="row">-->
         <!--<div class="col-lg-8">-->
         
-        <div class="blog_body blog_wrapper"  style="padding-top:60px;">
+        <div class="blog_body blog_wrapper"  style="padding-top:60px; border:1px solid red;">
             <% for(var i = blogs.length -1; i >= 0; i--){ %>
             
                 <p id="title"><%=blogs[i].title%></p><br>
 
                 <% if(blogs[i].video){ %>
-                <iframe align="middle" id="video" width="580px" height="400px" src="https://www.youtube.com/embed/<%=blogs[i].video%>"></iframe>
-               <% } %>
+                    <iframe align="middle" id="video" width="580px" height="400px" src="https://www.youtube.com/embed/<%=blogs[i].video%>"></iframe>
+                <% } %>
+               
                 <% if(blogs[i].picture){ %>
-                <img id="pic" src="<%=blogs[i].picture%>">
-                <p id="picCaption"><%=blogs[i].picCaption%></p>
-               <% } %>
+                    <img id="pic" src="<%=blogs[i].picture%>">
+                    <p id="picCaption"><%=blogs[i].picCaption%></p>
+                <% } %>
+               
                <div class="blog_body_text">
                     <p id="body" class="tab"><%=blogs[i].body%></p><br>
                 <% if(blogs[i].paragraphTwo){ %>
@@ -39,62 +39,56 @@
                     <p id="body" class="tab extra-paragraphs"><%=blogs[i].paragraphFour%></p><br>
                 <% } %>
                 </div>
-                <% if(currentUser){ %>
                 
-                <div style="padding-bottom:30px;">
-            <form style="padding-bottom:15px;" action="/blog/<%=blogs[i]._id%>?_method=DELETE" method="POST">
-                <button class="btn btn-md btn-danger">DELETE</button>
-            </form>
-            <a style=" float:left; padding-bottom:10px;"  class="ui blue basic button" href="/blog/<%=blogs[i]._id%>/edit">Edit Post</a>
-            </div>
-            <% } %>
-            <div><p class="pull-left">Posted: <%=blogs[i].date%></p></div>
-            <hr>
-            <hr>
-            
+                
+                <% if(currentUser){ %>
+                    
+                    <div style="padding-bottom:30px;">
+                <form style="padding-bottom:15px;" action="/blog/<%=blogs[i]._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-md btn-danger">DELETE</button>
+                </form>
+                <a style=" float:left; padding-bottom:10px;"  class="ui blue basic button" href="/blog/<%=blogs[i]._id%>/edit">Edit Post</a>
+                </div>
+                <% } %>
+                
+                
+                <div><p class="pull-left">Posted: <%=blogs[i].date%></p></div>
+                <hr>
+                <hr>
+                
             <% } %>
             </div>
 
-            
-        <!--</div>-->
-        <div style="padding-right:10px; padding-top:60px;">
-        <div class="sidebar">
-            
-             <p class="sideHeader" style="font-size:25px; padding-top:20px;">Who Are The Kpop Konverters?<p>
+        <div class="sidebar_wrapper">
+            <div class="sidebar">
+                <p class="sideHeader">Who Are The Kpop Konverters?<p>
                  
                  <a href="https://www.youtube.com/watch?v=VQmH7zOOqE4&"><img src="https://i.ytimg.com/vi/VQmH7zOOqE4/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLD54JUOSvZ1Od4OVlg4vSSIWs-JXA"></a>
-            <!--<iframe class="ytplayer" type="text/html" width="360" height="220" style="padding-top:20px;"-->
-            <!--  src="https://www.youtube.com/embed/VQmH7zOOqE4"-->
-            <!--  frameborder="0"></iframe>-->
               
-              
-              <p><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
-              <p>Join our Mailing list to hear about new giveaways and upcoming events!</p>
-              <p>We never send spam</p>
-              <form style="text-align:center;" action="/subscriber" method="POST">
+                <p><em>"Konverting" people everywhere to the world of Kpop and connecting with fans of all ages from all fandoms.</em></p>
+                <p>Join our Mailing list to hear about new giveaways and upcoming events!</p>
+                <form style="text-align:center;" action="/subscriber" method="POST">
                   <input type="text" name="email" placeholder=" Email">
-                  
                   <button class="btn btn-md btn-primary" style="margin-top:7px;">Sign Up!</button>
-              </form>
+                </form>
              
 
               <hr>
               
               
-             <p class="sideHeader" style="font-size:25px; padding-top:20px;">Check Out This Video!<p>
-            <iframe class="ytplayer" preload="none" type="text/html" width="360" height="220" style="padding-top:20px;"
-              src="https://www.youtube.com/embed?listType=search&list=kpop konverters"
-              frameborder="0"></iframe>
-              <hr>
-            <p class="sideHeader" style="font-size:25px; padding-top:30px;">Current Giveaways!<p>
-                <a href="/bingo">
-            <div style="width:100%" class="sidebarItem">
-                <img class="giveaway-img" src="../../styles/pics/bingo.jpg">
+                <p class="sideHeader">Check Out This Video!<p>
+                    <iframe class="ytplayer" preload="none" type="text/html" width="360" height="220" style="padding-top:20px;"
+                    src="https://www.youtube.com/embed?listType=search&list=kpop konverters"
+                    frameborder="0"></iframe>
+                  <hr>
+                  
+                <p class="sideHeader">Current Giveaways!<p>
+                    <a href="/bingo">
+                <div style="width:100%" class="sidebarItem">
+                    <img class="giveaway-img" src="../../styles/pics/bingo.jpg">
+                </div>
+                    </a>
             </div>
-            </a>
         </div>
-        
-        </div>
-    <!--</div>-->
     
 </div>
