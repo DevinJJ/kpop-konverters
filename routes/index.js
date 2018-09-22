@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var passport = require("passport");
-var LocalStrategy = require("passport-local");
-var bodyParser = require("body-parser");
-var User = require("../models/user");
+// var passport = require("passport");
+// var LocalStrategy = require("passport-local");
+// var bodyParser = require("body-parser");
+// var User = require("../models/user");
 var BlogPost = require("../models/blogPost");
 var Subscriber = require("../models/subscriber");
 

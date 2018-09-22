@@ -20,6 +20,7 @@
 .sidebar
 {
     width:80%;
+    max-width: 480px;
     background-color: #dcd9e2;
     border:1px solid black;
     border-radius: 5px;
