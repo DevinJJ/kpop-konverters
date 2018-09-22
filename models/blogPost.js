@@ -11,8 +11,6 @@ var blogPostSchema = new mongoose.Schema({
     paragraphFour: String,
     video: String,
     picCaption: String
- 
- 
 });
  
 module.exports = mongoose.model("BlogPost", blogPostSchema);

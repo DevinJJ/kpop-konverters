@@ -5,9 +5,6 @@ var bioSchema = new mongoose.Schema({
     paragraphOne:String,
     paragraphTwo:String,
     paragraphThree:String
-
- 
- 
 });
  
 module.exports = mongoose.model("Bio", bioSchema);

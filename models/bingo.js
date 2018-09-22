@@ -6,8 +6,6 @@ var bingoSchema = new mongoose.Schema({
     instagram:String,
     twitter:String,
     selectedSquares: String
- 
- 
 });
  
 module.exports = mongoose.model("Bingo", bingoSchema);
